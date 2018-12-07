@@ -1,0 +1,5 @@
+---
+applications:
+ - name: php-softinsa-app
+   random-route: true
+   memory: 128M

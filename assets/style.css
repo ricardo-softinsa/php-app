@@ -1,0 +1,57 @@
+.createTaskTitle{
+	font-size:20px;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	font-family:'Courier';
+}
+
+.formButton{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;	
+}
+
+.formButton:hover {
+    background-color: #45a049;
+}
+
+.overworld {
+	margin:0 auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+	width:46%;
+	float:left;
+}
+
+.overworld hr{
+	margin-bottom:40px;
+}
+
+.taskElement{
+	width:90%;
+	background-color:white;
+	border-radius:2px;
+	padding:5px;
+	margin-bottom:5px;
+	word-wrap: break-word;
+}
+
+.taskTitle{
+	font-size:20px;
+	font-weight:bold;
+	margin:0;
+}
