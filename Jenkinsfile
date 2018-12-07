@@ -31,7 +31,6 @@ node {
 	}
 	catch(err){
 	  	echo "Status: ";
-		echo err;
 	 }
   }
   stage("Cloud Push"){
