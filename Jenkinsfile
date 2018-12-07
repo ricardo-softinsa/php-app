@@ -31,4 +31,9 @@ node {
   stage("Cloud Push"){
 	echo "Pushing to Cloud...";
   }
+post {
+  aborted {
+    slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} has been aborted."
+  }
+}
 }
