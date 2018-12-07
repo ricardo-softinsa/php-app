@@ -15,7 +15,7 @@ node {
 	 externalMethod.call(currentBuild.currentResult);
  }
   stage("SonarQube Quality Gate") { 
-	timeout(time: 5, unit: 'MINUTES') { 
+	timeout(time: 1, unit: 'MINUTES') { 
 	   def qg = waitForQualityGate() 
 	   if(qg.status == "ERROR"){
 			echo "Failed Quality Gates";
