@@ -14,7 +14,6 @@ node {
 	 externalMethod.call(currentBuild.currentResult);
  }
   stage("SonarQube Quality Gate") { 
-	try{
 	  timeout(time: 1, unit: 'MINUTES') { 
 	   def slackMet = load("slackNotifications.groovy");
 	   def qg = waitForQualityGate() 
@@ -28,10 +27,6 @@ node {
 		 slackMet.afterQG(qg.status);
 	   }
 	  }
-	}
-	catch(err){
-	  	echo "Status: ";
-	 }
   }
   stage("Cloud Push"){
 	echo "Pushing to Cloud...";
