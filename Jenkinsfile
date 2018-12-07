@@ -29,7 +29,7 @@ node {
 	   }
 	  }
 	}
-	catch{
+	catch(err){
 	  	echo "Status: ";
 		echo qg.status;
 	 }
