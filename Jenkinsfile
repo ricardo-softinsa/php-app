@@ -26,7 +26,8 @@ node {
 		 echo "Passed Quality Gates!";
 		 slackMet.afterQG(qg.status);
 	   }
-	   
+	   echo "Status: ";
+	   echo qg.status;
 	}
   }
   stage("Cloud Push"){
