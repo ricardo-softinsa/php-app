@@ -9,10 +9,11 @@ node {
       bat "\"${scannerHome}/bin/sonar-scanner\""
     }
   }
+	/*
  stage('Send Slack Notification'){
 	def externalMethod = load("slackNotifications.groovy");
 	 externalMethod.call(currentBuild.currentResult);
- }
+ }*/
   stage("SonarQube Quality Gate") { 
 	  timeout(time: 1, unit: 'MINUTES') { 
 	   def slackMet = load("slackNotifications.groovy");
