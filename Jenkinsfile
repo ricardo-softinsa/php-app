@@ -1,4 +1,4 @@
-Clnode {
+node {
   stage('SCM') {
     git 'https://github.com/ricardo-softinsa/php-app.git'
   }
