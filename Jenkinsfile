@@ -19,6 +19,7 @@ node {
 	   def qg = waitForQualityGate() 
 	   if(qg.status == "ERROR"){
 		echo "Failed Quality Gates";
+		currentBuild.result = "FAILURE";
 		slackMet.afterQG(qg.status);
 		error "Pipeline aborted due to quality gate failure: ${qg.status}"
 	   }
