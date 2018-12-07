@@ -11,6 +11,7 @@ node {
   }
  stage('Send Slack Notification'){
 	def externalMethod = load("slackNotifications.groovy");
+	 echo currentBuild.result;
 	 externalMethod.call(currentBuild.result);
  }
   stage("SonarQube Quality Gate") { 
