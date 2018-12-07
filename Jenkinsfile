@@ -17,12 +17,15 @@ node {
   stage("SonarQube Quality Gate") { 
 	timeout(time: 1, unit: 'MINUTES') { 
 	   def qg = waitForQualityGate() 
+	   def slackMet = load("slackNotifications.groovy");
 	   if(qg.status == "ERROR"){
 			echo "Failed Quality Gates";
+		   	slackMet.afterQG(qg.status);
 			error "Pipeline aborted due to quality gate failure: ${qg.status}"
 	   }
 	   if (qg.status == 'OK') {
 		 echo "Passed Quality Gates!";
+		 slackMet.afterQG(qg.status);
 	   }
 	   
 	}
