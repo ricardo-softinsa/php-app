@@ -15,7 +15,7 @@ node {
  }
   stage("SonarQube Quality Gate") { 
 	try{
-	  timeout(time: 10, unit: 'SECONDS') { 
+	  timeout(time: 1, unit: 'MINUTES') { 
 	   def slackMet = load("slackNotifications.groovy");
 	   def qg = waitForQualityGate() 
 	   if(qg.status == "ERROR"){
