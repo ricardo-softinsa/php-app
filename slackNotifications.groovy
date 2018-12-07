@@ -16,4 +16,13 @@ def call(String buildResult) {
   }
 }
 
+def afterQG(String QAResult) {
+  if(QAResult == "OK"){
+    slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} passed SonarQube Quality Gates!"   
+  }
+  else if(QAResult == "ERROR") { 
+    slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} didn't pass SonarQube Quality Gates!"
+  }
+}
+
 return this;
