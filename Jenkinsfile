@@ -1,6 +1,6 @@
-node {
+Clnode {
   stage('SCM') {
-    git 'https://github.com/ricardo-softinsa/get-started-node.git'
+    git 'https://github.com/ricardo-softinsa/php-app.git'
   }
   stage('SonarQube analysis') {
     // requires SonarQube Scanner 2.8+
@@ -22,7 +22,7 @@ node {
 	   
 	}
   }
-  stage("Proceed Testing"){
-		echo "It got here...";
+  stage("Cloud Push"){
+		echo "Pushing to Cloud...";
   }
 }
